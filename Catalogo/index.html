@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Mouses</title>
+</head>
+<body>
+    <h1>Catálogo de Mouses</h1>
+    <form>
+        <table border="1">
+            <tr>
+                <th>Selecionar</th>
+                <th>Imagem</th>
+                <th>Código do Produto</th>
+                <th>Descrição</th>
+                <th>Quantidade em Estoque</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="produto1" value="Mouse1" onclick="mostrarEspec(1)"></td>
+                <td><img src="razer.png" alt="Mouse Razer"></td>
+                <td>Mouse1</td>
+                <td>Mouse Razer</td>
+                <td>10</td>
+                <td>R$ 199.99</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="produto2" value="Mouse2" onclick="mostrarEspec(2)"></td>
+                <td><img src="hyperx.png" alt="Mouse HyperX"></td>
+                <td>Mouse2</td>
+                <td>Mouse HyperX</td>
+                <td>15</td>
+                <td>R$ 89.99</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="produto3" value="Mouse3" onclick="mostrarEspec(3)"></td>
+                <td><img src="mouse.jpg" alt="Mouse Multilaser"></td>
+                <td>Mouse3</td>
+                <td>Mouse Multilaser</td>
+                <td>5</td>
+                <td>R$ 10.99</td>
+            </tr>
+        </table>
+        <br>
+        <div id="especificacoes">
+            <h2>Especificações do Produto</h2>
+            <p id="descricao"></p>
+            <p id="estoque"></p>
+            <p id="preco"></p>
+            <h2>Avaliação do Produto</h2>
+            <p id="avaliacao"></p>
+        </div>
+    </form>
+    
+    <script>
+        function mostrarEspec(produto) {
+            const descricao = document.getElementById("descricao");
+            const estoque = document.getElementById("estoque");
+            const preco = document.getElementById("preco");
+            const avaliacao = document.getElementById("avaliacao");
+            
+            switch (produto) {
+                case 1:
+                    descricao.innerText = "Descrição: Mouse Gamer";
+                    estoque.innerText = "Quantidade em Estoque: 10";
+                    preco.innerText = "Preço: R$ 199.99";
+                    avaliacao.innerText = "Avaliação: 5 estrelas";
+                    break;
+                case 2:
+                    descricao.innerText = "Descrição: Mouse Ergonômico";
+                    estoque.innerText = "Quantidade em Estoque: 15";
+                    preco.innerText = "Preço: R$ 89.99";
+                    avaliacao.innerText = "Avaliação: 4 estrelas";
+                    break;
+                case 3:
+                    descricao.innerText = "Descrição: Mouse duvidoso";
+                    estoque.innerText = "Quantidade em Estoque: 5";
+                    preco.innerText = "Preço: R$ 10.99";
+                    avaliacao.innerText = "Avaliação: 3 estrelas";
+                    break;
+                default:
+                    descricao.innerText = "";
+                    estoque.innerText = "";
+                    preco.innerText = "";
+                    avaliacao.innerText = "";
+            }
+        }
+    </script>
+</body>
+</html>
